@@ -1,0 +1,32 @@
+<div class="table-container">
+  <table class="users-table">
+    <thead>
+      <tr>
+        <th class="users-table__header-cell">USERNAME</th>
+        <th class="users-table__header-cell">FIRST NAME</th>
+        <th class="users-table__header-cell">LAST NAME</th>
+        <th class="users-table__header-cell">EMAIL</th>
+        <th class="users-table__header-cell">TYPE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersList" class="users-table__row" (click)="openEditUserForm(user)">
+        <td class="users-table__cell">
+          {{ user.username }}
+        </td>
+        <td class="users-table__cell">
+          {{ user.first_name }}
+        </td>
+        <td class="users-table__cell">
+          {{ user.last_name }}
+        </td>
+        <td class="users-table__cell">
+          {{ user.email }}
+        </td>
+        <td class="users-table__cell">
+          {{ user.user_type }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

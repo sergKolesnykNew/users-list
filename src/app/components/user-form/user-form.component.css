@@ -1,0 +1,82 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 5px;
+    padding: 1rem;
+    flex: 1;
+    margin-left: 2rem;
+}
+
+.users-form-header {
+    display: flex;
+    justify-content: space-between;    
+    margin-bottom: 1rem;
+}
+
+.users-form-header__title {
+    font-weight: 700;
+}
+
+.users-form-header__button {
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close-icon {
+    color: #a5a5b6;
+}
+
+.users-form-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.users-form-body__item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    flex: 1;
+}
+
+.users-form-body__title {
+    font-size: 0.75rem;
+}
+
+.primary-button {
+    align-self: center;
+}
+
+.users-form-body__select {
+    border-right: 16px solid transparent;
+}
+
+.users-form-body__input,
+.users-form-body__select {
+    border: none;
+    background: #f4f6f9;
+    border-radius: 5px;
+    height: 40px;
+    padding: 0 1rem;
+    outline: none;
+    color: #626674;
+}
+
+.users-form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.single-button {
+    justify-content: flex-end;
+}
+
+@media (max-width: 1000px) {
+    :host {
+        width: 100%;
+    }
+}

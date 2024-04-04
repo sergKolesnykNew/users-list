@@ -1,0 +1,51 @@
+:host {
+    display: flex;
+    height: 100vh;
+    background: #eef0f9;
+    padding: 0 2rem;
+    flex-direction: column;
+}
+
+.header {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1rem 0;
+}
+
+.header-messages {
+    display: flex;
+    margin-bottom: 2rem;
+    flex-direction: column;
+}
+
+
+.header-button-container {
+    width: 60%;
+    text-align: end;
+}
+
+.content {
+    display: flex;
+    height: 60%;
+}
+
+.error-info-panel  {
+    align-self: flex-start;
+}
+
+.success-info-panel  {
+    align-self: flex-end;
+}
+
+
+@media (max-width: 1000px) {
+    .header-button-container {
+        width: 100%;
+    }
+
+    .user-form-showed {
+        display: none;
+    }
+}

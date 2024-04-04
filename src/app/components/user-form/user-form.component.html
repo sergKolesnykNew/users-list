@@ -1,0 +1,97 @@
+<div class="users-form-header">
+  <span class="users-form-header__title">Create new user</span>
+
+  <button class="users-form-header__button" (click)="closeUserForm()">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+
+<form
+  appCustomValidation
+  class="users-form-body"
+  [formGroup]="userForm"
+  autocomplete="off"
+>
+  <div class="users-form-body__item">
+    <span class="users-form-body__title">Username*</span>
+
+    <input
+      class="users-form-body__input"
+      formControlName="username"
+      type="text"
+    />
+  </div>
+
+  <div class="users-form-body__item">
+    <span class="users-form-body__title">First name*</span>
+
+    <input
+      class="users-form-body__input"
+      formControlName="first_name"
+      type="text"
+    />
+  </div>
+
+  <div class="users-form-body__item">
+    <span class="users-form-body__title">Last name*</span>
+
+    <input
+      class="users-form-body__input"
+      formControlName="last_name"
+      type="text"
+    />
+  </div>
+
+  <div class="users-form-body__item">
+    <span class="users-form-body__title">Email*</span>
+
+    <input
+      class="users-form-body__input"
+      formControlName="email"
+      type="email"
+      placeholder="@"
+    />
+  </div>
+
+  <div class="users-form-body__item">
+    <span class="users-form-body__title">Type*</span>
+
+    <select
+      formControlName="user_type"
+      class="users-form-body__select"
+      name="types"
+      id="types"
+      type="select"
+    >
+      <option value="Admin">Admin</option>
+      <option value="Driver">Driver</option>
+    </select>
+  </div>
+
+  <div class="users-form-body__item">
+    <span class="users-form-body__title">Password*</span>
+
+    <input
+      class="users-form-body__input"
+      formControlName="password"
+      type="password"
+    />
+  </div>
+
+  <div class="users-form-body__item">
+    <span class="users-form-body__title">Repeate password*</span>
+
+    <input
+      class="users-form-body__input"
+      formControlName="confirmPassword"
+      type="password"
+    />
+  </div>
+
+  <div class="users-form-buttons" [class.single-button]="!isEditMode">
+    <button *ngIf="isEditMode" class="warning-button" (click)="deleteUser()">
+      Delete
+    </button>
+    <button class="primary-button" (click)="createUser()">Create</button>
+  </div>
+</form>

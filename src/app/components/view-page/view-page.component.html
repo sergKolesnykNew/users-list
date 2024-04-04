@@ -1,0 +1,32 @@
+<header class="header">
+  <div class="header-messages">
+    <span *ngIf="errorInfoPanel" class="error-info-panel">{{
+      errorInfoPanelMessage
+    }}</span>
+    <span *ngIf="successInfoPanel" class="success-info-panel">{{
+      successInfoPanelMessage
+    }}</span>
+  </div>
+
+  <div class="header-button-container">
+    <button class="primary-button" (click)="userFormShowed = true">
+      Create User
+    </button>
+  </div>
+</header>
+
+<div class="content">
+  <app-users-table
+    [usersList]="usersList$ | async"
+    [class.user-form-showed]="userFormShowed"
+    (edit)="openEditUserForm($event)"
+  ></app-users-table>
+
+  <app-user-form
+    *ngIf="userFormShowed"
+    [usersNames]="usersNamesList$ | async"
+    [currentUser]="currentUser"
+    (close)="closeUserForm()"
+    (validationEvent)="showInfoPanelMessage($event)"
+  ></app-user-form>
+</div>
