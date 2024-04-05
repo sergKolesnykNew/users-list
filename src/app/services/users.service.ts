@@ -32,6 +32,10 @@ export class UsersService {
   }
 
   deleteUser(deletedUser: UserModel): void {
-    this.currentUsers.next([...this.currentUsers.getValue().filter((user) => user.username !== deletedUser.username)]);
+    this.currentUsers.next([...this.currentUsers.getValue().filter((user: UserModel) => user.username !== deletedUser.username)]);
+  }
+
+  updateUser(newUser: UserModel, oldUserName: string): void {
+    this.currentUsers.next([...this.currentUsers.getValue().filter((user: UserModel) => user.username !== oldUserName), newUser]);
   }
 }

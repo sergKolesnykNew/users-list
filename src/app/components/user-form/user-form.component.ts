@@ -97,4 +97,13 @@ export class UserFormComponent implements OnInit {
 
     this.usersService.deleteUser(this.userForm.value);
   }
+
+  updateUser(): void {
+    this.validationEvent.emit({
+      type: 'Success',
+      message: 'Successfuly updated user',
+    });
+
+    this.usersService.updateUser(this.userForm.value, this.currentUser?.username ?? '');
+  }
 }

@@ -92,6 +92,10 @@
     <button *ngIf="isEditMode" class="warning-button" (click)="deleteUser()">
       Delete
     </button>
-    <button class="primary-button" (click)="createUser()">Create</button>
+    <button *ngIf="!isEditMode; else updateButton" class="primary-button" (click)="createUser()">Create</button>
+
+    <ng-template #updateButton>
+      <button class="primary-button" (click)="updateUser()">Update</button>
+    </ng-template>
   </div>
 </form>
